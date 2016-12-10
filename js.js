@@ -20,5 +20,13 @@ window.onload = function(){
     //
     curs = JSON.parse(creatjson(2, 2));
     console.dir(curs);
+    var page = document.getElementsByName("page");
+    console.log(page);
+
+    for(key in curs){
+        for(var i = 1; i < this.length; i++){
+            
+        }        
+    }
     
 }
