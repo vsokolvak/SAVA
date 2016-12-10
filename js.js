@@ -1,32 +1,24 @@
 window.onload = function(){
-    //sozdau json
-    function creatjson(coursecount, lectioncount){
-        var jsontext ="{";
-        for (var i = 1; i <= coursecount; i++){
-        jsontext += "\"curse" + i + "\": [\"curse" + i + "\"";
-            for (var j = 1; j <= lectioncount; j++){
-                jsontext += ", \"lection" + j + "\"";
-            };
-            jsontext += "]";
-            if (i < coursecount)
-                jsontext += ", ";
-    
-        };
-        jsontext += "}"
+    //create json создаю джейсон чтобы не писать в ручную и тестить при любом количестве курсов
+    function creatjson(coursecount){
+        var jsontext ="[\"curs1\"";
+        for (var i = 2; i <= coursecount; i++){
+        jsontext += ", \"curs" + i + "\"";
+        }
+        jsontext += "]";
         return jsontext;
     };
-    console.log(creatjson(2, 2));
-    
-    //
-    curs = JSON.parse(creatjson(2, 2));
-    console.dir(curs);
-    var page = document.getElementsByName("page");
-    console.log(page);
-
-    for(key in curs){
-        for(var i = 1; i < this.length; i++){
-            
-        }        
-    }
+    console.log(creatjson(2));
+    //end
+    //add coursename to block добавляю названия курсов в вёрстку адаптивно для любого количества курсов не зависимо от html
+    curs = JSON.parse(creatjson(8));//преобразовал json
+    console.dir(curs);//проверил
+    var pagecurs = document.getElementById('curs'); //страница с курсами
+    console.log(pagecurs);
+        for(var j = 0; j < curs.length; j++){ //цикл перебора курсов
+            var blok = document.createElement('div');//создал дивчик, добавил ему название курса как текст и разместил его на странице курсов 
+            pagecurs.appendChild(blok);
+            blok.innerHTML = curs[j];
+        }
     
 }
