@@ -4,3 +4,165 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+//mixin
+@mixin flex_centr(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+//end mixin
+body{
+    background: grey;
+}
+main{
+    background: white;
+    width: 70%;
+    margin: auto;
+    min-width: 400px;
+
+    section{
+        display: none;
+    }
+    #curs{
+        @include flex_centr;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 50px 0;
+        
+        div{
+            position: relative;
+            @include flex_centr;
+            width: 30%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            min-width: 150px;
+            color: darkblue;
+            background-color: powderblue;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 40px;
+            margin: 20px;
+            transition: all 0.2s linear;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.1);
+                box-shadow: 4px 4px 2px grey;
+            }
+        }
+    }
+    .lection{
+        position: relative;
+        padding-bottom: 50px;
+        padding-top: 50px;
+        .navbar{
+            width: 20%;
+            min-width: 200px;
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .cursename{
+                font-size: 30px;
+                color: darkblue;
+                padding: 30px;
+                font-weight: bold;
+            }
+            .search{
+                width: 80%;
+                height: 30px;
+                font-size: 20px;
+                color: black;
+                background-color: white;
+                border-radius: 3px;
+                min-width: 180px;
+            }
+            .navigation{
+                position: relative;
+                @include flex_centr;
+                width: 30%;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                min-width: 150px;
+                color: darkblue;
+                background-color: powderblue;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 40px;
+                margin: 10px;
+                margin-top: 30px;
+                transition: all 0.2s linear;
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    box-shadow: 4px 4px 2px grey;
+                }
+            }
+        }
+        .content{
+            @include flex_centr;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            div{
+                position: relative;
+                @include flex_centr;
+                width: 30%;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                min-width: 150px;
+                color: darkblue;
+                background-color: powderblue;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 40px;
+                margin: 10px;
+                transition: all 0.2s linear;
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    box-shadow: 4px 4px 2px grey;
+                }
+            }
+        }
+    }
+}
+.video{
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    flex-direction: column;
+    video{
+        width: auto;
+        height: auto;
+    }
+    .navigation{
+        position: relative;
+        @include flex_centr;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        min-width: 150px;
+        color: darkblue;
+        background-color: powderblue;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 40px;
+        margin: 10px;
+        margin-top: 30px;
+        transition: all 0.2s linear;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+            box-shadow: 4px 4px 2px grey;
+        }
+    }
+}
+
